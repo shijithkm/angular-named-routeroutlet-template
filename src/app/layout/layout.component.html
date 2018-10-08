@@ -1,0 +1,43 @@
+<div class="main-container" fxLayout="column" fxLayoutAlign="space-between stretch">
+  <mat-toolbar fxLayout="row" fxLayoutAlign="space-between center">
+    <span><button mat-icon-button [routerLink]="['/home']">
+        <mat-icon color="primary">person</mat-icon>
+      </button></span>
+    <span><button mat-icon-button [routerLink]="['/home']">
+        <mat-icon color="primary">notifications</mat-icon>
+      </button></span>
+  </mat-toolbar>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+  <mat-toolbar class="main-menu" fxLayout="row" fxLayoutAlign="space-between center">
+      <span fxLayout="column" fxLayoutAlign="center center">
+      <button mat-icon-button [routerLink]="['/home']">
+        <mat-icon color="primary">home</mat-icon>
+      </button>
+      <label>Home</label> 
+    </span>
+    <span fxLayout="column" fxLayoutAlign="center center">
+        <button [routerLink]="['/order']" mat-icon-button>
+          <mat-icon color="primary">library_add</mat-icon>
+        </button>
+        <label>Order</label> 
+    </span>
+    <span fxLayout="column" fxLayoutAlign="center center">
+      <button [routerLink]="['/home', { outlets: {'popup':['order'] }}]" mat-icon-button>
+        <mat-icon color="primary">event_available</mat-icon>
+      </button>
+      <label>Work</label> 
+    </span>
+    <span fxLayout="column" fxLayoutAlign="center center">
+      <button [routerLink]="['/home', { outlets: {'popup':['order'] }}]" mat-icon-button>
+        <mat-icon color="primary">beenhere</mat-icon>
+      </button>
+      <label>Delivery</label> 
+    </span>
+  </mat-toolbar>
+</div>
+
+
+<router-outlet name="popup"></router-outlet>
+<router-outlet name="help"></router-outlet>

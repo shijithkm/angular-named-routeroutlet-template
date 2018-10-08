@@ -1,0 +1,15 @@
+<div class="popup" fxLayout="column" fxLayoutAlign="space-between stretch">
+  <mat-toolbar fxLayout="row" fxLayoutAlign="space-between center">
+    <span fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="start center">
+      <button mat-icon-button [routerLink]="['/order']">
+        <mat-icon color="primary">arrow_back</mat-icon>
+      </button>
+      <label>Order Details</label>
+    </span>
+    <span>
+      <button mat-icon-button [routerLink]="['/order', { outlets: {'help':['help'] }}]">
+        <mat-icon color="primary">live_help</mat-icon>
+      </button>
+    </span>
+  </mat-toolbar>
+</div>
