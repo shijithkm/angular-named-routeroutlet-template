@@ -23,6 +23,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -47,7 +49,9 @@ import { MatChipsModule } from '@angular/material/chips';
     MatDialogModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
-    MatChipsModule
+    MatChipsModule,
+    MatAutocompleteModule,
+    FormsModule
   ],
   exports: [
     HttpClientModule,
@@ -70,7 +74,9 @@ import { MatChipsModule } from '@angular/material/chips';
     MatDialogModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
-    MatChipsModule
+    MatChipsModule,
+    MatAutocompleteModule,
+    FormsModule
   ],
   declarations: []
 })

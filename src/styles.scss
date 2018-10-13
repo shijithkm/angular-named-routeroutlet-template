@@ -11,7 +11,7 @@
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $candy-app-primary: mat-palette($mat-teal);
-$candy-app-accent: mat-palette($mat-teal, A200, A100, A400);
+$candy-app-accent: mat-palette($mat-pink);
 
 // The warn palette is optional (defaults to red).
 $candy-app-warn: mat-palette($mat-red);
@@ -91,4 +91,31 @@ body {
 a {
   cursor: pointer;
   text-decoration: none;
+}
+
+.float-button {
+  position: fixed !important;
+  z-index: 1;
+  bottom: 85px;
+  right: 1rem;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.mat-form-field-prefix,
+  {
+  white-space: nowrap;
+  flex: none;
+  position: relative;
+  top: 6px;
+}
+
+.mat-form-field .mat-icon {
+  color: rgba(0, 0, 0, 0.42);
+}
+
+mat-form-field-appearance-legacy .mat-form-field-prefix .mat-icon-button .mat-icon, .mat-form-field-appearance-legacy .mat-form-field-suffix .mat-icon-button .mat-icon {
+  font-size: 1.5rem !important;
 }

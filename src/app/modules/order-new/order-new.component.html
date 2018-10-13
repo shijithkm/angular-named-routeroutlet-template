@@ -1,0 +1,38 @@
+<div class="popup" fxLayout="column" fxLayoutAlign="start stretch">
+  <mat-toolbar fxLayout="row" fxLayoutAlign="space-between center">
+    <span fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="start center">
+      <button mat-icon-button [routerLink]="['/order']">
+        <mat-icon color="primary">arrow_back</mat-icon>
+      </button>
+      <label>New Order</label>
+    </span>
+    <span>
+      <button mat-icon-button [routerLink]="['/order', { outlets: {'help':['help'] }}]">
+        <mat-icon color="primary">live_help</mat-icon>
+      </button>
+    </span>
+  </mat-toolbar>
+
+  <mat-card>
+    <form>
+      <mat-form-field>
+        <mat-icon matPrefix>search</mat-icon>
+        <input type="text" placeholder="Customer" aria-label="Customer" matInput [formControl]="myControl"
+          [matAutocomplete]="auto" [(ngModel)]="value">
+        <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+          <mat-icon>close</mat-icon>
+        </button>
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option.name}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+  </mat-card>
+
+  <mat-card fxLayout="column" fxLayoutAlign="start stretch">
+      <button mat-raised-button color="primary">ADD ITEM</button>
+  </mat-card>  
+
+</div>

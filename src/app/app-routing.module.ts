@@ -32,10 +32,15 @@ const routes: Routes = [
         path: '',
         loadChildren: './modules/order/order.module#OrderModule'
       },
+      // {
+      //   path: ':id',
+      //   outlet: 'popup',
+      //   loadChildren: './modules/order-details/order-details.module#OrderDetailsModule'
+      // },
       {
-        path: ':id',
+        path: 'new',
         outlet: 'popup',
-        loadChildren: './modules/order-details/order-details.module#OrderDetailsModule'
+        loadChildren: './modules/order-new/order-new.module#OrderNewModule'
       },
       {
         path: ':id',
@@ -43,8 +48,11 @@ const routes: Routes = [
         loadChildren: './modules/help/help.module#HelpModule'
       }
     ]
-
-  }
+  },
+  {
+    path: '**',
+    redirectTo: 'home',
+  },
 ];
 
 @NgModule({

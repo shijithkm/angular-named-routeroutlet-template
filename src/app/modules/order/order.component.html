@@ -3,10 +3,15 @@
   <span class="filter-button" fxLayout="row" fxLayoutAlign="center center">Filter<mat-icon>expand_more</mat-icon></span>
 </div>
 
-<div class="list">
+<button class="float-button" mat-fab color="accent" [routerLink]="['/order', { outlets: { popup :['new'] }}]">
+  <mat-icon>add</mat-icon>
+</button>
+
+<div class="
+  list">
   <mat-card *ngFor="let order of orders">
     <a [routerLink]="['/order', { outlets: { popup: [1] }}]">
       {{ order}}
     </a>
   </mat-card>
-</div>
+  </div>
