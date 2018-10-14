@@ -32,7 +32,135 @@
   </mat-card>
 
   <mat-card fxLayout="column" fxLayoutAlign="start stretch">
-      <button mat-raised-button color="primary">ADD ITEM</button>
-  </mat-card>  
 
+    <mat-form-field>
+      <mat-icon matPrefix>search</mat-icon>
+      <input type="text" placeholder="Item" aria-label="Item" matInput [formControl]="myControl" [matAutocomplete]="itemAuto"
+        [(ngModel)]="value">
+      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        <mat-icon>close</mat-icon>
+      </button>
+      <mat-autocomplete #itemAuto="matAutocomplete" [displayWith]="displayFn">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option.name}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <div fxLayout="row" fxLayoutGap="10px">
+      <span>
+        <mat-form-field>
+          <input matInput placeholder="Qty">
+        </mat-form-field>
+      </span>
+      <span>
+        <mat-form-field>
+          <input matInput placeholder="Amount">
+        </mat-form-field>
+      </span>
+    </div>
+
+    <button mat-raised-button color="primary">ADD ITEM</button>
+  </mat-card>
+
+
+  <mat-card fxLayout="column" fxLayoutGap="10px">
+    <mat-card class="item" fxLayout="column" fxLayoutGap="10px">
+      <div class="item" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px">
+        <span class="h3">Churidar</span>
+        <span>Qty : 5</span>
+      </div>
+      <div class="item" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px">
+        <span fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px">
+          <button mat-mini-fab>
+            <mat-icon>accessibility</mat-icon>
+          </button>
+          <button mat-mini-fab>
+            <mat-icon>filter_vintage</mat-icon>
+          </button>
+          <button mat-mini-fab color="primary">
+            <mat-icon>delete_forever</mat-icon>
+          </button>
+        </span>
+        <span>Amount : 200</span>
+      </div>
+
+      <div fxLayout="column" fxLayoutGap="10px" class="material">
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px">
+          <span class="h4">Lining</span>
+          <span>Qty : 5</span>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px">
+          <span> <button mat-mini-fab color="primary">
+              <mat-icon>delete_forever</mat-icon>
+            </button></span>
+          <span>Amount : 200</span>
+        </div>
+      </div>
+
+      <div fxLayout="column" fxLayoutGap="10px" class="material">
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px">
+          <span class="h4">Lining</span>
+          <span>Qty : 5</span>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px">
+          <span> <button mat-mini-fab color="primary">
+              <mat-icon>delete_forever</mat-icon>
+            </button></span>
+          <span>Amount : 200</span>
+        </div>
+      </div>
+    </mat-card>
+  </mat-card>
+
+  <mat-card fxLayout="column" fxLayoutGap="10px">
+    <mat-card class="item" fxLayout="column" fxLayoutGap="10px">
+      <div class="item" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px">
+        <span class="h3">Churidar</span>
+        <span>Qty : 5</span>
+      </div>
+      <div class="item" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px">
+        <span fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px">
+          <button mat-mini-fab>
+            <mat-icon>accessibility</mat-icon>
+          </button>
+          <button mat-mini-fab>
+            <mat-icon>filter_vintage</mat-icon>
+          </button>
+          <button mat-mini-fab color="primary">
+            <mat-icon>delete_forever</mat-icon>
+          </button>
+        </span>
+        <span>Amount : 200</span>
+      </div>
+
+      <div fxLayout="column" fxLayoutGap="10px" class="material">
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px">
+          <span class="h4">Lining</span>
+          <span>Qty : 5</span>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px">
+          <span> <button mat-mini-fab color="primary">
+              <mat-icon>delete_forever</mat-icon>
+            </button></span>
+          <span>Amount : 200</span>
+        </div>
+      </div>
+
+      <div fxLayout="column" fxLayoutGap="10px" class="material">
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px">
+          <span class="h4">Lining</span>
+          <span>Qty : 5</span>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px">
+          <span> <button mat-mini-fab color="primary">
+              <mat-icon>delete_forever</mat-icon>
+            </button></span>
+          <span>Amount : 200</span>
+        </div>
+      </div>
+    </mat-card>
+  </mat-card>
+
+  
 </div>
